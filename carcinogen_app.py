@@ -47,8 +47,8 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("""
     🔍 **Prediction Rule:**  
-    - If the **average probability** is greater than 0.5 → ☣️ **Predicted as Carcinogen** 
-    - If the **average probability** is 0.5 or less → ✅ **Predicted as Non-Carcinogen**
+    - **Avg. probability > 0.5** → ☣️ **Carcinogen** 
+    - **Avg. probability ≤ 0.5** → ✅ **Non-Carcinogen**
     """)
 
 # ============ Input options ============
