@@ -44,6 +44,13 @@ with st.sidebar:
     3. Download the results if needed.
     """)
 
+    st.markdown("---")
+    st.markdown("""
+    🔍 **Prediction Rule:**  
+    - If the **average probability** is greater than 0.5 → ☣️ **Predicted as Carcinogen** 
+    - If the **average probability** is 0.5 or less → ✅ **Predicted as Non-Carcinogen**
+    """)
+
 # ============ Input options ============
 tab1, tab2 = st.tabs(["🧬 Single SMILES Input", "📄 Upload CSV File"])
 
