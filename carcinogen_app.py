@@ -1,13 +1,32 @@
 import streamlit as st
 import pandas as pd
 import sys
+import os
 from PIL import Image
 from predict_ensemble import predict_ensemble
+
+# ==== Visit Counter ====
+def increment_visit_counter():
+    counter_file = "visit_count.txt"
+    if not os.path.exists(counter_file):
+        with open(counter_file, "w") as f:
+            f.write("1")
+        return 1
+    else:
+        with open(counter_file, "r+") as f:
+            count = int(f.read().strip())
+            count += 1
+            f.seek(0)
+            f.write(str(count))
+            f.truncate()
+        return count
+
+visit_count = increment_visit_counter()
 
 st.set_page_config(page_title="Carcinogenicity Predictor", layout="centered")
 
 # === Header & Intro ===
-st.title("🧪 Carcinogenicity Predictior")
+st.markdown('<h1 style="color:red;">🧪 Carcinogenicity Predictor</h1>', unsafe_allow_html=True)
 st.markdown("""
 Predict the carcinogenic potential of a compound using an ensemble approach combining three machine learning models.
 
@@ -113,3 +132,5 @@ with col2:
 # === Footer ===
 st.markdown("---")
 st.caption(f"🔧 Python version: {sys.version.split()[0]}")
+st.title("🧪 Carcinogenicity Predictior")
+st.markdown(f"👁️ **Total visits:** {visit_count}")
