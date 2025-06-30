@@ -28,7 +28,7 @@ The tool is implemented in Python and deployed as an interactive **Streamlit app
 ## 🚀 Getting Started
 
 🔗 **Access the web application here**:  
-👉 [https://carcinogen-predictor.streamlit.app]  
+👉 [https://carcinogenicity-predictor.streamlit.app/]  
 
 ---
 
