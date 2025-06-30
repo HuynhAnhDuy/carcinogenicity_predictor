@@ -47,8 +47,8 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("""
     🔍 **Prediction Rule:**  
-    - **Avg. probability > 0.5** → ☣️ **Carcinogen** 
-    - **Avg. probability ≤ 0.5** → ✅ **Non-Carcinogen**
+    - **Avg. probability > 0.5** → ☣️ **Possible carcinogen** 
+    - **Avg. probability ≤ 0.5** → ✅ **Non-carcinogen**
     """)
 
 # ============ Input options ============
@@ -73,9 +73,9 @@ with tab1:
             st.markdown("---")
             st.metric("🎯 Average Probability from Consensus Framework", f"{result['average_probability']:.4f}")
             if result["predicted_label"] == "carcinogen":
-                st.error("☣️ **Prediction: Carcinogen**")
+                st.error("☣️ **Prediction: Possible carcinogen**")
             else:
-                st.success("✅ **Prediction: Non-Carcinogen**")
+                st.success("✅ **Prediction: Non-carcinogen**")
 
 # ==== Tab 2: Upload CSV ====
 with tab2:
